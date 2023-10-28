@@ -16,5 +16,4 @@ public class Posiciones {
     private Integer id;
     private String nombre;
 
-    // Relación con la tabla "jugador"
 }

@@ -35,14 +35,15 @@ public class JugadorController {
     public ResponseEntity<List<JugadorDTO>> findAll() {
         List<JugadorDTO> list = service.findAll().stream()
                 .map(jugador -> {
-                    JugadorDTO playerDTO = mapper.map(jugador, JugadorDTO.class);
+                    JugadorDTO jugadorDTO = mapper.map(jugador, JugadorDTO.class);
                     // Mapea manualmente la relación Position
-                    playerDTO.setPosiciones(mapper.map(jugador.getId(), Posiciones.class));
-                    return playerDTO;
+                    jugadorDTO.setPosiciones(mapper.map(jugador.getPosiciones(), PosicionesDTO.class));
+                    return jugadorDTO;
                 })
                 .collect(Collectors.toList());
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
+
 
     @GetMapping("/{id}")
     public ResponseEntity<JugadorDTO> findById(@PathVariable("id") Integer id) {

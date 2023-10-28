@@ -16,6 +16,6 @@ public class JugadorDTO {
     private String nombre;
     private Integer edad;
     private String equipo;
-    private Posiciones posiciones;
+    private PosicionesDTO posiciones;
 
 }

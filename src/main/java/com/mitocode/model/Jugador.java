@@ -22,5 +22,4 @@ public class Jugador {
     @JoinColumn(name="id_Posiciones")
     private Posiciones posiciones;
 
-    // Constructor, getters y setters
 }
